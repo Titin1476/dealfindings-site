@@ -1,0 +1,19 @@
+<svg width="260" height="52" viewBox="0 0 260 52" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="dfTitle dfDesc">
+  <title id="dfTitle">DealFindings</title>
+  <desc id="dfDesc">Logo for DealFindings. Tag icon with checkmark and wordmark.</desc>
+
+  <!-- Tag icon -->
+  <path d="M6 18a4 4 0 0 1 4-4h20a4 4 0 0 1 2.8 1.2l9 9a3.5 3.5 0 0 1 0 5l-9 9A4 4 0 0 1 30 40H10a4 4 0 0 1-4-4Z"
+        fill="#2563EB"/>
+  <circle cx="16" cy="24" r="2.1" fill="#FFFFFF" opacity="0.9"/>
+  <path d="M20 30l3 3 6-7"
+        fill="none" stroke="#F97316" stroke-width="2.3"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Wordmark -->
+  <text x="60" y="25"
+        font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-size="21" font-weight="700">
+    <tspan fill="#F97316">Deal</tspan><tspan fill="#2563EB">Findings</tspan>
+  </text>
+</svg>
