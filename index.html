@@ -62,9 +62,10 @@
 }
 
 .logo-svg {
-  height: 52px;          /* text now clearly bigger */
+  height: 60px;   /* overall logo larger */
   width: auto;
 }
+
 
     /* --- Site header / logo --- */
 
@@ -274,54 +275,54 @@
   </style>
 </head>
 <body>
-  <header class="site-header">
     <!-- DealFindings logo SVG -->
-    <svg class="logo-svg" viewBox="0 0 260 60" xmlns="http://www.w3.org/2000/svg" aria-labelledby="dfLogoTitle dfLogoDesc" role="img">
-      <title id="dfLogoTitle">DealFindings</title>
-      <desc id="dfLogoDesc">Tag icon with check mark and the word DealFindings</desc>
+  <svg class="logo-svg" viewBox="0 0 260 60" xmlns="http://www.w3.org/2000/svg" aria-labelledby="dfLogoTitle dfLogoDesc" role="img">
+    <title id="dfLogoTitle">DealFindings</title>
+    <desc id="dfLogoDesc">Tag icon with check mark and the word DealFindings</desc>
 
-      <!-- Tag icon -->
-      <g transform="translate(0,8)">
-        <!-- Tag shape -->
-        <path
-          d="M12 4h36c2.2 0 4 1.8 4 4v20c0 2.2-1.8 4-4 4H24L8 20V8c0-2.2 1.8-4 4-4z"
-          fill="#2563EB" />
-        <!-- Tag hole -->
-        <circle cx="16" cy="12" r="3.2" fill="#EFF6FF" />
-        <!-- Check mark -->
-        <path
-          d="M20 20.5l3.4 3.4 6.6-7.4"
-          fill="none"
-          stroke="#FB923C"
-          stroke-width="2.4"
-          stroke-linecap="round"
-          stroke-linejoin="round" />
-      </g>
+    <!-- Tag icon (smaller) -->
+    <g transform="translate(0,10) scale(0.7)">
+      <!-- Tag shape -->
+      <path
+        d="M12 4h36c2.2 0 4 1.8 4 4v20c0 2.2-1.8 4-4 4H24L8 20V8c0-2.2 1.8-4 4-4z"
+        fill="#2563EB" />
+      <!-- Tag hole -->
+      <circle cx="16" cy="12" r="3.2" fill="#EFF6FF" />
+      <!-- Check mark -->
+      <path
+        d="M20 20.5l3.4 3.4 6.6-7.4"
+        fill="none"
+        stroke="#FB923C"
+        stroke-width="2.4"
+        stroke-linecap="round"
+        stroke-linejoin="round" />
+    </g>
 
-      <!-- Text: DealFindings -->
-      <g transform="translate(70,37)">
-        <!-- "Deal" -->
-        <text
-          x="0"
-          y="0"
-          font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
-          font-size="26"
-          font-weight="700"
-          fill="#FB923C">
-          Deal
-        </text>
-        <!-- "Findings" -->
-        <text
-          x="70"
-          y="0"
-          font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
-          font-size="26"
-          font-weight="700"
-          fill="#2563EB">
-          Findings
-        </text>
-      </g>
-    </svg>
+    <!-- Text: DealFindings (one word, bigger than tag) -->
+    <g transform="translate(70,38)">
+      <!-- "Deal" -->
+      <text
+        x="0"
+        y="0"
+        font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-size="30"
+        font-weight="700"
+        fill="#FB923C">
+        Deal
+      </text>
+      <!-- "Findings" -->
+      <text
+        x="63"  <!-- small gap so it reads as one word -->
+        y="0"
+        font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-size="30"
+        font-weight="700"
+        fill="#2563EB">
+        Findings
+      </text>
+    </g>
+  </svg>
+
   </header>
 
   <div class="page">
@@ -1002,6 +1003,7 @@
   </script>
 </body>
 </html>
+
 
 
 
