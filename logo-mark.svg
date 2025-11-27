@@ -1,0 +1,13 @@
+<svg width="64" height="64" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="dfMarkTitle">
+  <title id="dfMarkTitle">DealFindings icon</title>
+
+  <rect x="4" y="8" width="28" height="24" rx="5" ry="5" fill="#2563EB"/>
+  <circle cx="14" cy="18" r="2.2" fill="#FFFFFF" opacity="0.9"/>
+
+  <path d="M18 24l4 4 8-9"
+        fill="none" stroke="#F97316" stroke-width="3"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- subtle background circle to square it up nicely -->
+  <circle cx="32" cy="32" r="12" fill="none"/>
+</svg>
