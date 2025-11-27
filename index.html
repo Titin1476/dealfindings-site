@@ -15,7 +15,6 @@
   <meta property="og:description" content="One weekly email with handpicked tech deals — only tech worth buying, only when it’s a deal.">
   <meta property="og:url" content="https://dealfindings.com">
   <meta property="og:type" content="website">
-  <!-- When you later create an OG image (1200x630) and host it at /og-image.png, uncomment the next line -->
   <!-- <meta property="og:image" content="https://dealfindings.com/og-image.png"> -->
 
   <meta name="twitter:card" content="summary_large_image">
@@ -23,7 +22,6 @@
   <meta name="twitter:description" content="One weekly email with handpicked tech deals — only tech worth buying, only when it’s a deal.">
 
   <style>
-
     :root {
       --green: #0b7a2a;
       --green-dark: #07521c;
@@ -40,95 +38,43 @@
     }
 
     body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: radial-gradient(circle at top left, #e0f2f1, #f5f7fa);
-  color: var(--text);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;   /* ⬅ important change */
-  align-items: center;
-  justify-content: flex-start;
-  padding: 24px;
-}
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #e0f2f1, #f5f7fa);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 24px;
+    }
 
-/* NEW: header + logo */
-.site-header {
-  width: 100%;
-  max-width: 1400px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-bottom: 16px;
-}
-
-.logo-svg {
-  height: 60px;   /* overall logo larger */
-  width: auto;
-}
-
-
-    /* --- Site header / logo --- */
+    /* HEADER + LOGO */
 
     .site-header {
       width: 100%;
-      display: flex;
-      justify-content: center;
-      padding: 8px 24px 0;
-    }
-
-    .site-header-inner {
-      width: 100%;
-      max-width: 900px;
+      max-width: 1000px;
       display: flex;
       align-items: center;
       justify-content: flex-start;
+      margin-bottom: 20px;
     }
 
-    .logo-link {
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-    }
-
-      .logo-image {
-      height: 52px;   /* bigger logo */
+    .logo-svg {
+      height: 52px; /* tag smaller, text larger */
       width: auto;
+      display: block;
     }
 
-    /* give the card a little breathing room below the header */
-       .page {
-      max-width: 1200px;  /* wider card */
+    /* MAIN CARD (single column) */
+
+    .page {
+      max-width: 900px;
       width: 100%;
       background: var(--card-bg);
       box-shadow: 0 18px 40px rgba(15, 23, 42, 0.15);
       border-radius: 18px;
       overflow: hidden;
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      margin-top: 16px;
-    }
-
-
-
-    .page {
-  max-width: 1100px;
-  width: 100%;
-  background: var(--card-bg);
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.15);
-  border-radius: 18px;
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: 1.4fr 0.9fr;
-}
-
-
-    @media (max-width: 800px) {
-      .page {
-        grid-template-columns: 1fr;
-      }
-      .hero-side {
-        display: none;
-      }
     }
 
     .content {
@@ -229,8 +175,11 @@
       font-size: 11px;
       color: #9ca3af;
       text-align: center;
-      padding: 8px 16px 12px;
+      padding: 10px 16px 12px;
       border-top: 1px solid #e5e7eb;
+      margin-top: 18px;
+      width: 100%;
+      max-width: 900px;
     }
 
     .hero-side {
@@ -272,65 +221,67 @@
       font-size: 11px;
       opacity: 0.75;
     }
+
+    @media (max-width: 640px) {
+      .content {
+        padding: 28px 20px 24px;
+      }
+      h1 {
+        font-size: 26px;
+      }
+    }
   </style>
 </head>
 <body>
-    <!-- DealFindings logo SVG -->
-  <svg class="logo-svg" viewBox="0 0 260 60" xmlns="http://www.w3.org/2000/svg" aria-labelledby="dfLogoTitle dfLogoDesc" role="img">
-    <title id="dfLogoTitle">DealFindings</title>
-    <desc id="dfLogoDesc">Tag icon with check mark and the word DealFindings</desc>
+  <!-- HEADER WITH LOGO -->
+  <header class="site-header">
+    <svg class="logo-svg" viewBox="0 0 260 60" xmlns="http://www.w3.org/2000/svg" aria-labelledby="dfLogoTitle dfLogoDesc" role="img">
+      <title id="dfLogoTitle">DealFindings</title>
+      <desc id="dfLogoDesc">Tag icon with check mark and the word DealFindings</desc>
 
-    <!-- Tag icon (smaller) -->
-    <g transform="translate(0,10) scale(0.7)">
-      <!-- Tag shape -->
-      <path
-        d="M12 4h36c2.2 0 4 1.8 4 4v20c0 2.2-1.8 4-4 4H24L8 20V8c0-2.2 1.8-4 4-4z"
-        fill="#2563EB" />
-      <!-- Tag hole -->
-      <circle cx="16" cy="12" r="3.2" fill="#EFF6FF" />
-      <!-- Check mark -->
-      <path
-        d="M20 20.5l3.4 3.4 6.6-7.4"
-        fill="none"
-        stroke="#FB923C"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round" />
-    </g>
+      <!-- Tag icon (smaller than text) -->
+      <g transform="translate(0,10) scale(0.6)">
+        <!-- Tag shape -->
+        <path
+          d="M12 4h36c2.2 0 4 1.8 4 4v20c0 2.2-1.8 4-4 4H24L8 20V8c0-2.2 1.8-4 4-4z"
+          fill="#2563EB" />
+        <!-- Tag hole -->
+        <circle cx="16" cy="12" r="3.2" fill="#EFF6FF" />
+        <!-- Check mark -->
+        <path
+          d="M20 20.5l3.4 3.4 6.6-7.4"
+          fill="none"
+          stroke="#FB923C"
+          stroke-width="2.4"
+          stroke-linecap="round"
+          stroke-linejoin="round" />
+      </g>
 
-    <!-- Text: DealFindings (one word, bigger than tag) -->
-    <g transform="translate(70,38)">
-      <!-- "Deal" -->
-      <text
-        x="0"
-        y="0"
-        font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
-        font-size="30"
-        font-weight="700"
-        fill="#FB923C">
-        Deal
-      </text>
-      <!-- "Findings" -->
-      <text
-        x="63"  <!-- small gap so it reads as one word -->
-        y="0"
-        font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
-        font-size="30"
-        font-weight="700"
-        fill="#2563EB">
-        Findings
-      </text>
-    </g>
-  </svg>
-
+      <!-- Text: DealFindings -->
+      <g transform="translate(70,38)">
+        <text
+          x="0"
+          y="0"
+          font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+          font-size="30"
+          font-weight="700"
+          fill="#FB923C">
+          Deal
+        </text>
+        <text
+          x="63"
+          y="0"
+          font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+          font-size="30"
+          font-weight="700"
+          fill="#2563EB">
+          Findings
+        </text>
+      </g>
+    </svg>
   </header>
 
-  <div class="page">
-
-
-  <div class="page">
-    <main class="content">
-
+  <!-- MAIN CARD -->
   <div class="page">
     <main class="content">
       <div class="badge">DealFindings Weekly</div>
@@ -350,7 +301,6 @@
         <div class="form-label">Join DealFindings</div>
 
         <!-- 🔽🔽🔽 MAILERLITE EMBED CODE START 🔽🔽🔽 -->
-
         <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1762785");</style>
         <style type="text/css">
           /* LOADER */
@@ -968,9 +918,7 @@
         <script>
           fetch("https://assets.mailerlite.com/jsonp/1947386/forms/172176129821509406/takel")
         </script>
-
         <!-- 🔼🔼🔼 MAILERLITE EMBED CODE END 🔼🔼🔼 -->
-
       </div>
 
       <p class="note">
@@ -998,12 +946,7 @@
   </footer>
 
   <script>
-    // Set current year automatically
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
-
-
-
-
