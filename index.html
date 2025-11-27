@@ -5,7 +5,25 @@
   <title>DealFindings — Only Tech Worth Buying</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Join DealFindings for one weekly email with the best curated tech deals. Only tech worth buying — only when it’s a deal." />
+
+  <!-- Favicon / app icon -->
+  <link rel="icon" href="/logo-mark.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/logo-mark.svg" type="image/svg+xml">
+
+  <!-- Social sharing (Open Graph / Twitter) -->
+  <meta property="og:title" content="DealFindings — Only Tech Worth Buying">
+  <meta property="og:description" content="One weekly email with handpicked tech deals — only tech worth buying, only when it’s a deal.">
+  <meta property="og:url" content="https://dealfindings.com">
+  <meta property="og:type" content="website">
+  <!-- When you later create an OG image (1200x630) and host it at /og-image.png, uncomment the next line -->
+  <!-- <meta property="og:image" content="https://dealfindings.com/og-image.png"> -->
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DealFindings — Only Tech Worth Buying">
+  <meta name="twitter:description" content="One weekly email with handpicked tech deals — only tech worth buying, only when it’s a deal.">
+
   <style>
+
     :root {
       --green: #0b7a2a;
       --green-dark: #07521c;
@@ -27,10 +45,54 @@
       color: var(--text);
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       padding: 24px;
     }
+
+    /* --- Site header / logo --- */
+
+    .site-header {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 8px 24px 0;
+    }
+
+    .site-header-inner {
+      width: 100%;
+      max-width: 900px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .logo-link {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo-image {
+      height: 36px;
+      width: auto;
+    }
+
+    /* give the card a little breathing room below the header */
+    .page {
+      max-width: 900px;
+      width: 100%;
+      background: var(--card-bg);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.15);
+      border-radius: 18px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      margin-top: 12px;
+    }
+
+
 
     .page {
       max-width: 900px;
@@ -196,6 +258,19 @@
   </style>
 </head>
 <body>
+  </head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="/" class="logo-link">
+        <img src="logo-dealfindings.svg" alt="DealFindings" class="logo-image">
+      </a>
+    </div>
+  </header>
+
+  <div class="page">
+    <main class="content">
+
   <div class="page">
     <main class="content">
       <div class="badge">DealFindings Weekly</div>
@@ -868,3 +943,4 @@
   </script>
 </body>
 </html>
+
