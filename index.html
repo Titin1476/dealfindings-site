@@ -239,26 +239,25 @@
       <title id="dfLogoTitle">DealFindings</title>
       <desc id="dfLogoDesc">Tag icon with check mark and the word DealFindings</desc>
 
-      <!-- Tag icon (slightly lower for centering) -->
-      <g transform="translate(0,14) scale(0.6)">
-        <!-- Tag shape -->
-        <path
-          d="M12 4h36c2.2 0 4 1.8 4 4v20c0 2.2-1.8 4-4 4H24L8 20V8c0-2.2 1.8-4 4-4z"
-          fill="#2563EB" />
-        <!-- Tag hole -->
-        <circle cx="16" cy="12" r="3.2" fill="#EFF6FF" />
-        <!-- Check mark -->
-        <path
-          d="M20 20.5l3.4 3.4 6.6-7.4"
-          fill="none"
-          stroke="#FB923C"
-          stroke-width="2.4"
-          stroke-linecap="round"
-          stroke-linejoin="round" />
-      </g>
+      <!-- Tag icon (shifted closer to text) -->
+<g transform="translate(28,10) scale(0.8)">
+  <path
+    d="M12 4h36c2.2 0 4 1.8 4 4v20c0 2.2-1.8 4-4 4H24L8 20V8c0-2.2 1.8-4 4-4z"
+    fill="#2563EB" />
+  <circle cx="16" cy="12" r="3.2" fill="#EFF6FF" />
+  <path
+    d="M20 20.5l3.4 3.4 6.6-7.4"
+    fill="none"
+    stroke="#FB923C"
+    stroke-width="2.4"
+    stroke-linecap="round"
+    stroke-linejoin="round" />
+</g>
+
 
       <!-- Text: DealFindings -->
-<g transform="translate(44,38)">
+<g transform="translate(80,38)">
+  <!-- "Deal" -->
   <text
     x="0"
     y="0"
@@ -268,8 +267,10 @@
     fill="#FB923C">
     Deal
   </text>
+
+  <!-- "Findings" -->
   <text
-    x="60"
+    x="74"
     y="0"
     font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
     font-size="32"
@@ -278,6 +279,7 @@
     Findings
   </text>
 </g>
+
 
 
     </svg>
@@ -952,5 +954,6 @@
   </script>
 </body>
 </html>
+
 
 
