@@ -42,7 +42,7 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      gap: 48px;
+      gap: 32px;
     }
 
     .header {
@@ -93,11 +93,12 @@
     }
 
     .cta-btn:hover {
-      background: #ea580c;
+      opacity: 0.95;
+      transform: translateY(-1px);
     }
 
     .features {
-      margin-bottom: 36px;
+      margin-bottom: 24px;
       font-size: 17px;
       list-style: none;
     }
@@ -106,6 +107,102 @@
       margin: 6px 0;
       color: #065f46;
     }
+
+    /* === Deals section (2-per-row grid) === */
+
+    .deals-section {
+      margin-bottom: 32px;
+    }
+
+    .deals-heading {
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .deals-subtitle {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 18px;
+      max-width: 640px;
+    }
+
+    .deals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .deal-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 16px 16px 18px;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .deal-image-placeholder {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #e5e7eb, #f3f4f6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #6b7280;
+      margin-bottom: 6px;
+    }
+
+    .deal-title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .deal-desc {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .deal-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    .deal-stars {
+      color: #f59e0b;
+      font-size: 13px;
+    }
+
+    .deal-savings {
+      font-weight: 600;
+      color: #16a34a;
+    }
+
+    .deal-button {
+      margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--brand-blue);
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .deal-button:hover {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+    }
+
+    /* === Signup box === */
 
     .signup-box {
       padding: 35px;
@@ -135,7 +232,7 @@
     }
 
     .signup-btn {
-      background: var(--brand-orange);
+      background: black;
       color: white;
       width: 100%;
       font-size: 18px;
@@ -147,14 +244,32 @@
     }
 
     .signup-btn:hover {
-      background: #ea580c;
+      opacity: 0.95;
+      transform: translateY(-1px);
     }
 
     footer {
       text-align: center;
-      margin-top: 48px;
+      margin-top: 32px;
       color: #6b7280;
       font-size: 14px;
+    }
+
+    /* Simple mobile tweaks */
+
+    @media (max-width: 640px) {
+      .page {
+        padding: 28px 20px;
+      }
+
+      .logo-svg {
+        width: 100%;
+        height: auto;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
     }
   </style>
 </head>
@@ -162,7 +277,7 @@
 
 <div class="page">
 
-  <!-- LOGO (upper-left) -->
+  <!-- LOGO (upper-left, larger text, fixed spacing & baseline) -->
   <div class="header">
     <svg class="logo-svg"
          viewBox="0 0 500 120"
@@ -176,7 +291,7 @@
       <g transform="translate(0,38)">
         <path d="M12 4h52c3 0 5 2 5 5v26c0 3-2 5-5 5H32L10 24V9c0-3 2-5 5-5z" fill="#2563EB"/>
         <circle cx="22" cy="14" r="4" fill="#EFF6FF"/>
-        <!-- Checkmark moved right -->
+        <!-- Checkmark offset to the right -->
         <path d="M43 24l7 7 11-13"
               fill="none"
               stroke="#FB923C"
@@ -185,7 +300,7 @@
               stroke-linejoin="round"/>
       </g>
 
-      <!-- Text: one word, larger than icon -->
+      <!-- Text: Larger and one word -->
       <text x="75" y="82"
             font-size="65"
             font-weight="700"
@@ -205,60 +320,112 @@
     Join free and get one weekly email with the best tech deals curated to save you money on gear you’ll actually use.
   </p>
 
-  <button class="cta-btn" type="button" id="top-cta">Send me this week’s deals!</button>
+  <button class="cta-btn">Send me this week’s deals!</button>
 
   <ul class="features">
     <li>✔ No junk — one helpful email per week</li>
     <li>✔ Only trusted brands and well-reviewed products</li>
   </ul>
 
-  <div class="signup-box" id="signup">
+  <!-- Deals section ABOVE signup box -->
+  <section class="deals-section">
+    <h2 class="deals-heading">This week’s featured-style deals</h2>
+    <p class="deals-subtitle">
+      Example picks to show the type of offers subscribers receive. Replace these with your real deals and affiliate links.
+    </p>
+
+    <div class="deals-grid">
+
+      <!-- Deal #1 -->
+      <article class="deal-card">
+        <div class="deal-image-placeholder">
+          Product image
+        </div>
+        <h3 class="deal-title">Anker 45W USB-C Fast Charger</h3>
+        <p class="deal-desc">
+          Compact wall charger for phones, tablets, and laptops. Great for travel and everyday carry.
+        </p>
+        <div class="deal-meta">
+          <span class="deal-stars">★★★★☆ 4.6</span>
+          <span class="deal-savings">Save 32%</span>
+        </div>
+        <a class="deal-button" href="#" target="_blank" rel="noopener noreferrer">
+          View deal
+        </a>
+      </article>
+
+      <!-- Deal #2 -->
+      <article class="deal-card">
+        <div class="deal-image-placeholder">
+          Product image
+        </div>
+        <h3 class="deal-title">Sony WH-1000XM5 Noise-Canceling Headphones</h3>
+        <p class="deal-desc">
+          Flagship ANC headphones for flights, focus time, and commuting. Strong reviews across the board.
+        </p>
+        <div class="deal-meta">
+          <span class="deal-stars">★★★★★ 4.8</span>
+          <span class="deal-savings">Save 25%</span>
+        </div>
+        <a class="deal-button" href="#" target="_blank" rel="noopener noreferrer">
+          View deal
+        </a>
+      </article>
+
+      <!-- Deal #3 -->
+      <article class="deal-card">
+        <div class="deal-image-placeholder">
+          Product image
+        </div>
+        <h3 class="deal-title">Logitech MX Master 3S Wireless Mouse</h3>
+        <p class="deal-desc">
+          Ergonomic mouse trusted by power users for editing, coding, and everyday desktop use.
+        </p>
+        <div class="deal-meta">
+          <span class="deal-stars">★★★★☆ 4.7</span>
+          <span class="deal-savings">Save 21%</span>
+        </div>
+        <a class="deal-button" href="#" target="_blank" rel="noopener noreferrer">
+          View deal
+        </a>
+      </article>
+
+      <!-- Deal #4 -->
+      <article class="deal-card">
+        <div class="deal-image-placeholder">
+          Product image
+        </div>
+        <h3 class="deal-title">Samsung 1TB Portable SSD T7</h3>
+        <p class="deal-desc">
+          Fast external SSD for backups, photo libraries, and game storage in a pocket-sized shell.
+        </p>
+        <div class="deal-meta">
+          <span class="deal-stars">★★★★☆ 4.7</span>
+          <span class="deal-savings">Save 29%</span>
+        </div>
+        <a class="deal-button" href="#" target="_blank" rel="noopener noreferrer">
+          View deal
+        </a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Signup box -->
+  <div class="signup-box">
     <h2>Join the DealFindings Weekly Newsletter</h2>
     <p class="signup-box-subtext">
       Only Tech Worth Buying — Only When It’s a Deal.
     </p>
 
-    <!-- MailerLite wired form -->
-    <form
-      id="newsletter-form"
-      class="ml-block-form"
-      action="https://assets.mailerlite.com/jsonp/1947386/forms/172176129821509406/subscribe"
-      method="POST"
-    >
-      <input
-        type="email"
-        name="fields[email]"
-        id="email"
-        placeholder="Email"
-        autocomplete="email"
-        required
-      />
-
-      <!-- Required MailerLite fields -->
-      <input type="hidden" name="ml-submit" value="1">
-      <input type="hidden" name="anticsrf" value="true">
-
-      <button type="submit" class="signup-btn" id="form-cta">
-        Send me this week’s deals!
-      </button>
-    </form>
+    <!-- TODO: Wire this up to MailerLite form embed or custom endpoint -->
+    <input type="email" placeholder="Email" />
+    <button class="signup-btn">Send me this week’s deals!</button>
   </div>
 
   <footer>© 2025 DealFindings. All rights reserved.</footer>
 
 </div>
-
-<script>
-  // Scroll from top CTA to signup box
-  const topCta = document.getElementById('top-cta');
-  const signupBox = document.getElementById('signup');
-
-  if (topCta && signupBox) {
-    topCta.addEventListener('click', function () {
-      signupBox.scrollIntoView({ behavior: 'smooth' });
-    });
-  }
-</script>
 
 </body>
 </html>
