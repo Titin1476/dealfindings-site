@@ -81,7 +81,7 @@
     }
 
     .cta-btn {
-      background: #059669;
+      background: #f97316; /* orange button */
       color: white;
       font-size: 18px;
       font-weight: 600;
@@ -90,27 +90,212 @@
       padding: 14px 28px;
       cursor: pointer;
       margin-bottom: 24px;
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+      transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.1s ease;
+      box-shadow: 0 10px 25px rgba(248, 113, 22, 0.35);
+    }
+
+    .cta-btn:hover {
+      background: #ea580c;
+      transform: translateY(-1px);
+      box-shadow: 0 14px 35px rgba(248, 113, 22, 0.45);
     }
 
     .features {
-      margin-bottom: 36px;
-      font-size: 17px;
+      margin-bottom: 12px;
+      font-size: 15px;
+      color: #065f46;
+      list-style: none;
     }
 
     .features li {
-      margin: 6px 0;
-      color: #065f46;
+      margin: 4px 0;
+      position: relative;
+      padding-left: 18px;
     }
 
-    /* 📌 Amazon Required Disclosure Styling */
-    .disclosure {
-      font-size: 14px;
-      color: #4B5563;
-      background: #F3F4F6;
-      padding: 10px 14px;
-      border-radius: 6px;
-      margin-bottom: 20px;
+    .features li::before {
+      content: "•";
+      position: absolute;
+      left: 4px;
+      color: #059669;
+      font-size: 18px;
+      line-height: 1;
     }
+
+    /* ===== DEALS SECTION (Magazine style) ===== */
+
+    .deals-section {
+      margin-top: -8px;
+    }
+
+    .deals-section-header {
+      margin-bottom: 18px;
+    }
+
+    .deals-section-header h2 {
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .deals-section-header p {
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 620px;
+    }
+
+    .deal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    @media (max-width: 960px) {
+      .deal-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .deal-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .deal-card {
+      border-radius: 18px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      padding: 14px 14px 16px;
+    }
+
+    .deal-image {
+      background: linear-gradient(135deg, #e0ebff, #f5f7ff);
+      border-radius: 14px;
+      height: 150px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #6b7280;
+      text-align: center;
+    }
+
+    .deal-image-placeholder-text {
+      max-width: 90%;
+    }
+
+    /* If you later paste an <img> from SiteStripe, this keeps it clean */
+    .deal-image img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 12px;
+      display: block;
+    }
+
+    .deal-meta {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #6b7280;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      gap: 6px;
+    }
+
+    .deal-tag {
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(22, 163, 74, 0.09);
+      color: #15803d;
+      font-weight: 600;
+      font-size: 10px;
+    }
+
+    .deal-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .deal-title a {
+      color: #111827;
+      text-decoration: none;
+    }
+
+    .deal-title a:hover {
+      text-decoration: underline;
+    }
+
+    .deal-copy {
+      font-size: 13px;
+      color: #4b5563;
+      margin-bottom: 8px;
+    }
+
+    .deal-stats {
+      font-size: 11px;
+      color: #6b7280;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .deal-stars {
+      color: #f59e0b;
+      font-size: 12px;
+      margin-right: 4px;
+    }
+
+    .deal-price-note {
+      font-weight: 500;
+      color: #16a34a;
+    }
+
+    .deal-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      background: #111827;
+      color: #f9fafb;
+      text-decoration: none;
+      margin-top: auto;
+      transition: background 0.08s ease, transform 0.08s ease;
+    }
+
+    .deal-cta:hover {
+      background: #020617;
+      transform: translateY(-1px);
+    }
+
+    .deal-cta span {
+      margin-left: 4px;
+      font-size: 13px;
+    }
+
+    .disclaimer {
+      font-size: 11px;
+      color: #9ca3af;
+      margin-top: 8px;
+    }
+
+    /* ===== SIGNUP BOX ===== */
 
     .signup-box {
       padding: 35px;
@@ -156,19 +341,13 @@
       color: #6b7280;
       font-size: 14px;
     }
-
-    footer a {
-      color: #2563EB;
-      text-decoration: none;
-    }
   </style>
 </head>
-
 <body>
 
 <div class="page">
 
-  <!-- LOGO -->
+  <!-- LOGO (upper-left, larger text, fixed spacing & clipping) -->
   <div class="header">
     <svg class="logo-svg"
          viewBox="0 0 500 120"
@@ -178,9 +357,11 @@
       <title id="dfLogoTitle">DealFindings Logo</title>
       <desc id="dfLogoDesc">Blue price tag icon with orange checkmark and the word DealFindings</desc>
 
+      <!-- Tag icon aligned to text baseline -->
       <g transform="translate(0,38)">
         <path d="M12 4h52c3 0 5 2 5 5v26c0 3-2 5-5 5H32L10 24V9c0-3 2-5 5-5z" fill="#2563EB"/>
         <circle cx="22" cy="14" r="4" fill="#EFF6FF"/>
+        <!-- Checkmark moved 20px right -->
         <path d="M43 24l7 7 11-13"
               fill="none"
               stroke="#FB923C"
@@ -189,6 +370,7 @@
               stroke-linejoin="round"/>
       </g>
 
+      <!-- Text: Larger and one word -->
       <text x="75" y="82"
             font-size="65"
             font-weight="700"
@@ -199,9 +381,11 @@
     </svg>
   </div>
 
-  <!-- Header -->
+  <!-- Header Label -->
   <span class="section-label">DEALFINDINGS WEEKLY</span>
+
   <h1>Only Tech Worth Buying — Only When It’s a Deal.</h1>
+
   <p class="subtitle">
     Join free and get one weekly email with the best tech deals curated to save you money on gear you’ll actually use.
   </p>
@@ -209,17 +393,206 @@
   <button class="cta-btn">Send me this week’s deals!</button>
 
   <ul class="features">
-    <li>✔ No junk — one helpful email per week</li>
-    <li>✔ Only trusted brands and well-reviewed products</li>
+    <li>No junk — one helpful email per week</li>
+    <li>Only trusted brands and well-reviewed products</li>
   </ul>
 
-  <!-- Amazon Disclosure -->
-  <p class="disclosure">
-    <strong>Disclosure:</strong> DealFindings participates in the Amazon Services LLC Associates Program.
-    As an Amazon Associate, we earn from qualifying purchases from Amazon.com links at no extra cost to you.
-  </p>
+  <!-- ================= DEALS SECTION ================= -->
+  <section class="deals-section" aria-label="Featured tech deals">
+    <div class="deals-section-header">
+      <h2>This week’s featured tech picks</h2>
+      <p>
+        Early example curation to show the type of gear you’ll see in the newsletter.
+        Prices change often — always check the live price on Amazon before buying.
+      </p>
+    </div>
 
-  <!-- Signup Box -->
+    <div class="deal-grid">
+
+      <!-- Deal 1: AirPods 4 -->
+      <article class="deal-card">
+        <div class="deal-image">
+          <!-- When SiteStripe Image is available, paste it here instead of the placeholder text. -->
+          <span class="deal-image-placeholder-text">Product image from Amazon (AirPods 4)</span>
+        </div>
+        <div class="deal-meta">
+          <span>Apple • Wireless earbuds</span>
+          <span class="deal-tag">Editor’s pick</span>
+        </div>
+        <h3 class="deal-title">
+          <a href="https://www.amazon.com/Apple-Bluetooth-Headphones-Personalized-Effortless/dp/B0DGHMNQ5Z?&linkCode=ll1&tag=dealfindings1-20&linkId=eab380841baf63b0ad5fd29fbeccce4a&language=en_US&ref_=as_li_ss_tl"
+             target="_blank" rel="nofollow sponsored noopener">
+            Apple AirPods 4 Wireless Earbuds
+          </a>
+        </h3>
+        <p class="deal-copy">
+          Latest AirPods with personalized spatial audio, USB-C charging case, and sweat &amp; water resistance —
+          an easy upgrade from older AirPods.
+        </p>
+        <div class="deal-stats">
+          <span><span class="deal-stars">★★★★★</span>10K+ recent purchases</span>
+          <span class="deal-price-note">Great everyday price</span>
+        </div>
+        <a class="deal-cta"
+           href="https://www.amazon.com/Apple-Bluetooth-Headphones-Personalized-Effortless/dp/B0DGHMNQ5Z?&linkCode=ll1&tag=dealfindings1-20&linkId=eab380841baf63b0ad5fd29fbeccce4a&language=en_US&ref_=as_li_ss_tl"
+           target="_blank" rel="nofollow sponsored noopener">
+          View deal<span>↗</span>
+        </a>
+      </article>
+
+      <!-- Deal 2: Amazon Smart Plug -->
+      <article class="deal-card">
+        <div class="deal-image">
+          <span class="deal-image-placeholder-text">Product image from Amazon (Amazon Smart Plug)</span>
+        </div>
+        <div class="deal-meta">
+          <span>Amazon • Smart home</span>
+          <span class="deal-tag">Under 30s setup</span>
+        </div>
+        <h3 class="deal-title">
+          <a href="https://www.amazon.com/Amazon-smart-plug-works-with-Alexa/dp/B089DR29T6?th=1&linkCode=ll1&tag=dealfindings1-20&linkId=3bb509998a61f61fe5786aee53a87f16&language=en_US&ref_=as_li_ss_tl"
+             target="_blank" rel="nofollow sponsored noopener">
+            Amazon Smart Plug (works with Alexa)
+          </a>
+        </h3>
+        <p class="deal-copy">
+          Turn almost any lamp or small appliance into a smart device you can control with your voice or the Alexa app.
+        </p>
+        <div class="deal-stats">
+          <span><span class="deal-stars">★★★★★</span>Hundreds of thousands of ratings</span>
+          <span class="deal-price-note">Often on sale</span>
+        </div>
+        <a class="deal-cta"
+           href="https://www.amazon.com/Amazon-smart-plug-works-with-Alexa/dp/B089DR29T6?th=1&linkCode=ll1&tag=dealfindings1-20&linkId=3bb509998a61f61fe5786aee53a87f16&language=en_US&ref_=as_li_ss_tl"
+           target="_blank" rel="nofollow sponsored noopener">
+          View deal<span>↗</span>
+        </a>
+      </article>
+
+      <!-- Deal 3: Fire TV Stick 4K Max -->
+      <article class="deal-card">
+        <div class="deal-image">
+          <span class="deal-image-placeholder-text">Product image from Amazon (Fire TV Stick 4K Max)</span>
+        </div>
+        <div class="deal-meta">
+          <span>Amazon • Streaming</span>
+          <span class="deal-tag">Great gift</span>
+        </div>
+        <h3 class="deal-title">
+          <a href="https://www.amazon.com/all-new-amazon-fire-tv-stick-4k-max/dp/B0BP9SNVH9?th=1&linkCode=ll1&tag=dealfindings1-20&linkId=9418c48b101ed47a70d102f9737a1bbe&language=en_US&ref_=as_li_ss_tl"
+             target="_blank" rel="nofollow sponsored noopener">
+            Fire TV Stick 4K Max (latest generation)
+          </a>
+        </h3>
+        <p class="deal-copy">
+          Streams in 4K with Dolby Vision support and Alexa voice remote — an easy upgrade for older TVs.
+        </p>
+        <div class="deal-stats">
+          <span><span class="deal-stars">★★★★★</span>Top-selling streaming stick</span>
+          <span class="deal-price-note">Watch for bundle deals</span>
+        </div>
+        <a class="deal-cta"
+           href="https://www.amazon.com/all-new-amazon-fire-tv-stick-4k-max/dp/B0BP9SNVH9?th=1&linkCode=ll1&tag=dealfindings1-20&linkId=9418c48b101ed47a70d102f9737a1bbe&language=en_US&ref_=as_li_ss_tl"
+           target="_blank" rel="nofollow sponsored noopener">
+          View deal<span>↗</span>
+        </a>
+      </article>
+
+      <!-- Deal 4: Logitech MX Master 3S -->
+      <article class="deal-card">
+        <div class="deal-image">
+          <span class="deal-image-placeholder-text">Product image from Amazon (Logitech MX Master 3S)</span>
+        </div>
+        <div class="deal-meta">
+          <span>Logitech • Productivity</span>
+          <span class="deal-tag">Work upgrade</span>
+        </div>
+        <h3 class="deal-title">
+          <a href="https://www.amazon.com/Logitech-Wireless-Ultra-fast-Scrolling-Bluetooth/dp/B09HM94VDS?th=1&linkCode=ll1&tag=dealfindings1-20&linkId=40356ca56b9f576f84dd05328ebd267a&language=en_US&ref_=as_li_ss_tl"
+             target="_blank" rel="nofollow sponsored noopener">
+            Logitech MX Master 3S Wireless Mouse
+          </a>
+        </h3>
+        <p class="deal-copy">
+          One of the most popular productivity mice: smooth scroll wheel, multiple device pairing, and great ergonomics.
+        </p>
+        <div class="deal-stats">
+          <span><span class="deal-stars">★★★★★</span>Creator &amp; office favorite</span>
+          <span class="deal-price-note">Worth tracking for discounts</span>
+        </div>
+        <a class="deal-cta"
+           href="https://www.amazon.com/Logitech-Wireless-Ultra-fast-Scrolling-Bluetooth/dp/B09HM94VDS?th=1&linkCode=ll1&tag=dealfindings1-20&linkId=40356ca56b9f576f84dd05328ebd267a&language=en_US&ref_=as_li_ss_tl"
+           target="_blank" rel="nofollow sponsored noopener">
+          View deal<span>↗</span>
+        </a>
+      </article>
+
+      <!-- Deal 5: AirPods Max -->
+      <article class="deal-card">
+        <div class="deal-image">
+          <span class="deal-image-placeholder-text">Product image from Amazon (AirPods Max)</span>
+        </div>
+        <div class="deal-meta">
+          <span>Apple • Over-ear ANC</span>
+          <span class="deal-tag">Big splurge</span>
+        </div>
+        <h3 class="deal-title">
+          <a href="https://www.amazon.com/Apple-Cancellation-Translation-Headphones-High-Fidelity/dp/B0FQFB8FMG?&linkCode=ll1&tag=dealfindings1-20&linkId=da7b4ef399d3ffa3357cba486abd2461&language=en_US&ref_=as_li_ss_tl"
+             target="_blank" rel="nofollow sponsored noopener">
+            Apple AirPods Max Noise-Cancelling Headphones
+          </a>
+        </h3>
+        <p class="deal-copy">
+          High-end over-ear headphones with strong noise cancellation and tight Apple ecosystem integration.
+        </p>
+        <div class="deal-stats">
+          <span><span class="deal-stars">★★★★☆</span>Premium pick</span>
+          <span class="deal-price-note">Best when marked down</span>
+        </div>
+        <a class="deal-cta"
+           href="https://www.amazon.com/Apple-Cancellation-Translation-Headphones-High-Fidelity/dp/B0FQFB8FMG?&linkCode=ll1&tag=dealfindings1-20&linkId=da7b4ef399d3ffa3357cba486abd2461&language=en_US&ref_=as_li_ss_tl"
+           target="_blank" rel="nofollow sponsored noopener">
+          View deal<span>↗</span>
+        </a>
+      </article>
+
+      <!-- Deal 6: Shark Ultra-Light Vacuum -->
+      <article class="deal-card">
+        <div class="deal-image">
+          <span class="deal-image-placeholder-text">Product image from Amazon (Shark Ultra-Light Vacuum)</span>
+        </div>
+        <div class="deal-meta">
+          <span>Shark • Home cleaning</span>
+          <span class="deal-tag">Non-tech bonus</span>
+        </div>
+        <h3 class="deal-title">
+          <a href="https://www.amazon.com/Shark-Ultra-Light-Cleaning-Steering-HV301/dp/B00DFBDALC?th=1&linkCode=ll1&tag=dealfindings1-20&linkId=e78109d054582ab975552f36a4cb0aa0&language=en_US&ref_=as_li_ss_tl"
+             target="_blank" rel="nofollow sponsored noopener">
+            Shark Ultra-Light Corded Stick Vacuum (HV301)
+          </a>
+        </h3>
+        <p class="deal-copy">
+          Lightweight stick vacuum that’s easy to maneuver around furniture and tight spaces — solid value pick.
+        </p>
+        <div class="deal-stats">
+          <span><span class="deal-stars">★★★★☆</span>Popular home upgrade</span>
+          <span class="deal-price-note">Watch for home deals</span>
+        </div>
+        <a class="deal-cta"
+           href="https://www.amazon.com/Shark-Ultra-Light-Cleaning-Steering-HV301/dp/B00DFBDALC?th=1&linkCode=ll1&tag=dealfindings1-20&linkId=e78109d054582ab975552f36a4cb0aa0&language=en_US&ref_=as_li_ss_tl"
+           target="_blank" rel="nofollow sponsored noopener">
+          View deal<span>↗</span>
+        </a>
+      </article>
+
+    </div>
+
+    <p class="disclaimer">
+      As an Amazon Associate, DealFindings earns from qualifying purchases. Product availability and prices are subject to change.
+    </p>
+  </section>
+
+  <!-- ================= SIGNUP BOX ================= -->
   <div class="signup-box">
     <h2>Join the DealFindings Weekly Newsletter</h2>
     <p class="signup-box-subtext">
@@ -230,10 +603,7 @@
     <button class="signup-btn">Send me this week’s deals!</button>
   </div>
 
-  <footer>
-    © 2025 DealFindings. All rights reserved.
-    <br><a href="/privacy.html">Privacy Policy & Affiliate Disclosure</a>
-  </footer>
+  <footer>© 2025 DealFindings. All rights reserved.</footer>
 
 </div>
 
