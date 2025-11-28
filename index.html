@@ -29,7 +29,6 @@
       min-height: 100vh;
       display: flex;
       justify-content: center;
-      align-items: flex-start;
       padding: 24px;
     }
 
@@ -43,21 +42,18 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      gap: 48px;
     }
 
-    /* Header: logo in upper-left */
     .header {
-      width: 100%;
       display: flex;
-      align-items: center;
       justify-content: flex-start;
+      margin-bottom: 8px;
     }
 
     .logo-svg {
-      width: auto;
-      height: 80px;
-      display: block;
+      width: 480px;
+      height: 100px;
     }
 
     .section-label {
@@ -90,21 +86,15 @@
       font-size: 18px;
       font-weight: 600;
       border: none;
-      border-radius: 999px;
-      padding: 18px 32px;
+      border-radius: 30px;
+      padding: 14px 28px;
       cursor: pointer;
       margin-bottom: 24px;
-      width: 100%;
-    }
-
-    .cta-btn:hover {
-      background: #047857;
     }
 
     .features {
       margin-bottom: 36px;
       font-size: 17px;
-      list-style: none;
     }
 
     .features li {
@@ -117,7 +107,6 @@
       border-radius: 12px;
       background: #fefefe;
       border: 1px solid #ecf0f1;
-      max-width: 650px;
     }
 
     .signup-box h2 {
@@ -149,16 +138,11 @@
       padding: 14px;
       border-radius: 12px;
       cursor: pointer;
-      border: none;
-    }
-
-    .signup-btn:hover {
-      background: #111827;
     }
 
     footer {
       text-align: center;
-      margin-top: 40px;
+      margin-top: 48px;
       color: #6b7280;
       font-size: 14px;
     }
@@ -168,37 +152,32 @@
 
 <div class="page">
 
-  <!-- HEADER / LOGO (upper-left) -->
+  <!-- LOGO (upper-left, larger text, fixed spacing & clipping) -->
   <div class="header">
     <svg class="logo-svg"
-         viewBox="0 0 320 80"
+         viewBox="0 0 500 120"
          xmlns="http://www.w3.org/2000/svg"
          aria-labelledby="dfLogoTitle dfLogoDesc"
          role="img">
       <title id="dfLogoTitle">DealFindings Logo</title>
       <desc id="dfLogoDesc">Blue price tag icon with orange checkmark and the word DealFindings</desc>
 
-      <!-- Tag icon, lowered to align with text baseline -->
-      <g transform="translate(0,18)">
-        <!-- Tag shape -->
-        <path
-          d="M12 4h52c3 0 5 2 5 5v26c0 3-2 5-5 5H32L10 24V9c0-3 2-5 5-5z"
-          fill="#2563EB" />
-        <!-- Tag hole -->
-        <circle cx="22" cy="14" r="4" fill="#EFF6FF" />
-        <!-- Checkmark (shifted right inside the tag) -->
-        <path
-          d="M33 24l7 7 11-13"
-          fill="none"
-          stroke="#FB923C"
-          stroke-width="3"
-          stroke-linecap="round"
-          stroke-linejoin="round" />
+      <!-- Tag icon aligned to text baseline -->
+      <g transform="translate(0,38)">
+        <path d="M12 4h52c3 0 5 2 5 5v26c0 3-2 5-5 5H32L10 24V9c0-3 2-5 5-5z" fill="#2563EB"/>
+        <circle cx="22" cy="14" r="4" fill="#EFF6FF"/>
+        <!-- Checkmark moved 20px right -->
+        <path d="M43 24l7 7 11-13"
+              fill="none"
+              stroke="#FB923C"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"/>
       </g>
 
-      <!-- Single text node so “DealFindings” is one word -->
-      <text x="90" y="52"
-            font-size="40"
+      <!-- Text: Larger and one word -->
+      <text x="95" y="70"
+            font-size="54"
             font-weight="700"
             font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
             fill="#FB923C">
@@ -207,7 +186,7 @@
     </svg>
   </div>
 
-  <!-- HERO CONTENT -->
+  <!-- Header Label -->
   <span class="section-label">DEALFINDINGS WEEKLY</span>
 
   <h1>Only Tech Worth Buying — Only When It’s a Deal.</h1>
@@ -223,7 +202,6 @@
     <li>✔ Only trusted brands and well-reviewed products</li>
   </ul>
 
-  <!-- SIGNUP BOX -->
   <div class="signup-box">
     <h2>Join the DealFindings Weekly Newsletter</h2>
     <p class="signup-box-subtext">
