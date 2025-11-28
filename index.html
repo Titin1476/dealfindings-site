@@ -25,32 +25,14 @@
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: radial-gradient(circle at top left, #e0f2f1, #f5f7fa);
       color: var(--text);
-    }
-
-    .shell {
-      max-width: 1200px;
-      margin: 32px auto 48px;
-      padding: 0 24px;
-    }
-
-    /* HEADER / LOGO */
-
-    .site-header {
+      min-height: 100vh;
       display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      margin-bottom: 32px;
+      justify-content: center;
+      padding: 24px;
     }
-
-    .logo-svg {
-      width: auto;
-      height: 70px;
-      display: block;
-    }
-
-    /* MAIN CARD */
 
     .page {
+      max-width: 1200px;
       width: 100%;
       background: var(--card-bg);
       padding: 48px;
@@ -59,7 +41,14 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      gap: 48px;
+    }
+
+    .logo-svg {
+      width: auto;
+      height: 85px;        /* text slightly larger than icon */
+      display: block;
+      margin-bottom: 8px;
     }
 
     .section-label {
@@ -98,20 +87,14 @@
       margin-bottom: 24px;
     }
 
-    .cta-btn:focus-visible {
-      outline: 3px solid #10b981;
-      outline-offset: 2px;
-    }
-
     .features {
-      margin-bottom: 12px;
+      margin-bottom: 36px;
       font-size: 17px;
-      list-style: none;
-      color: #065f46;
     }
 
     .features li {
       margin: 6px 0;
+      color: #065f46;
     }
 
     .signup-box {
@@ -150,107 +133,85 @@
       padding: 14px;
       border-radius: 12px;
       cursor: pointer;
-      border: none;
     }
 
     footer {
       text-align: center;
-      margin-top: 32px;
+      margin-top: 48px;
       color: #6b7280;
       font-size: 14px;
-    }
-
-    @media (max-width: 768px) {
-      .page {
-        padding: 28px 20px 32px;
-      }
-
-      h1 {
-        font-size: 32px;
-      }
-
-      .signup-box {
-        padding: 24px 18px;
-      }
-
-      .logo-svg {
-        height: 56px;
-      }
     }
   </style>
 </head>
 <body>
-  <div class="shell">
-    <!-- LOGO IN TOP-LEFT -->
-    <header class="site-header">
-      <svg class="logo-svg"
-           viewBox="0 0 260 60"
-           xmlns="http://www.w3.org/2000/svg"
-           aria-labelledby="dfLogoTitle dfLogoDesc"
-           role="img">
-        <title id="dfLogoTitle">DealFindings Logo</title>
-        <desc id="dfLogoDesc">Price tag icon with centered checkmark and DealFindings wordmark</desc>
 
-        <!-- Tag icon (slightly smaller than text, left-aligned) -->
-        <g transform="translate(0,8) scale(0.9)">
-          <path d="M10 4h38c2.2 0 4 1.8 4 4v22c0 2.2-1.8 4-4 4H24L8 20V8c0-2.2 1.8-4 4-4z"
-                fill="#2563EB" />
-          <circle cx="17" cy="13" r="3.2" fill="#EFF6FF" />
-          <!-- Centered-ish checkmark -->
-          <path d="M19 20l4.3 4.3L31 17"
-                fill="none"
-                stroke="#FB923C"
-                stroke-width="2.6"
-                stroke-linecap="round"
-                stroke-linejoin="round" />
-        </g>
+<div class="page">
 
-        <!-- Wordmark: DealFindings (single word) -->
-        <text x="60" y="39"
-              font-size="32"
-              font-weight="700"
-              font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
-          <tspan fill="#FB923C">Deal</tspan><tspan fill="#2563EB">Findings</tspan>
-        </text>
-      </svg>
-    </header>
+  <!-- LOGO -->
+  <svg class="logo-svg"
+       viewBox="0 0 420 110"
+       xmlns="http://www.w3.org/2000/svg"
+       role="img">
+    <title>DealFindings Logo</title>
+    <desc>Price tag icon with checkmark and DealFindings text</desc>
 
-    <!-- MAIN CARD -->
-    <main class="page">
-      <div>
-        <span class="section-label">DEALFINDINGS WEEKLY</span>
-        <h1>Only Tech Worth Buying — Only When It’s a Deal.</h1>
+    <!-- Tag icon (lowered so bottom aligns with text) -->
+    <g transform="translate(0,32)">
+      <!-- Tag background -->
+      <path
+        d="M12 6h44c2.5 0 4.5 2 4.5 4.5v25c0 2.5-2 4.5-4.5 4.5H28L10 22V10c0-2.5 2-4.5 4.5-4.5z"
+        fill="#2563EB" />
+      <!-- Tag hole -->
+      <circle cx="20" cy="16" r="4" fill="#EFF6FF" />
+      <!-- Checkmark (already shifted right, slightly off-center) -->
+      <path
+        d="M30 26l8 8 11-13"
+        fill="none"
+        stroke="#FB923C"
+        stroke-width="4.2"
+        stroke-linecap="round"
+        stroke-linejoin="round" />
+    </g>
 
-        <p class="subtitle">
-          Join free and get one weekly email with the best tech deals curated to save you money on gear you’ll actually use.
-        </p>
+    <!-- One-word DealFindings (no visual gap) -->
+    <text x="78" y="70"
+          font-size="56"
+          font-weight="800"
+          font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+          letter-spacing="-0.8">
+      <tspan fill="#FB923C">Deal</tspan><tspan fill="#2563EB">Findings</tspan>
+    </text>
+  </svg>
 
-        <a href="#signup">
-          <button class="cta-btn">Send me this week’s deals!</button>
-        </a>
+  <!-- Header -->
+  <span class="section-label">DEALFINDINGS WEEKLY</span>
+  <h1>Only Tech Worth Buying — Only When It’s a Deal.</h1>
 
-        <ul class="features">
-          <li>✔ No junk — one helpful email per week</li>
-          <li>✔ Only trusted brands and well-reviewed products</li>
-        </ul>
-      </div>
+  <p class="subtitle">
+    Join free and get one weekly email with the best tech deals curated to save you money on gear you’ll actually use.
+  </p>
 
-      <!-- Signup Box -->
-      <section id="signup" class="signup-box">
-        <h2>Join the DealFindings Weekly Newsletter</h2>
-        <p class="signup-box-subtext">
-          Only Tech Worth Buying — Only When It’s a Deal.
-        </p>
+  <button class="cta-btn">Send me this week’s deals!</button>
 
-        <input type="email" placeholder="Email" />
+  <ul class="features">
+    <li>✔ No junk — one helpful email per week</li>
+    <li>✔ Only trusted brands and well-reviewed products</li>
+  </ul>
 
-        <button class="signup-btn">Send me this week’s deals!</button>
-      </section>
+  <!-- Signup Box -->
+  <div class="signup-box">
+    <h2>Join the DealFindings Weekly Newsletter</h2>
+    <p class="signup-box-subtext">
+      Only Tech Worth Buying — Only When It’s a Deal.
+    </p>
 
-      <footer>
-        © 2025 DealFindings. All rights reserved.
-      </footer>
-    </main>
+    <input type="email" placeholder="Email" />
+    <button class="signup-btn">Send me this week’s deals!</button>
   </div>
+
+  <footer>© 2025 DealFindings. All rights reserved.</footer>
+
+</div>
+
 </body>
 </html>
