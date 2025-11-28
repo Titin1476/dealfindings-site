@@ -5,188 +5,200 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DealFindings — Only Buy It When It’s a Deal</title>
 
-  <style>
-    :root {
-      --green-dark: #07521c;
-      --bg: #f5f7fa;
-      --text: #0f172a;
-      --muted: #6b7280;
-      --card-bg: #ffffff;
-      --brand-blue: #2563EB;
-      --brand-orange: #FB923C;
-    }
+<style>
+  :root {
+    --green-dark: #07521c;
+    --bg: #f5f7fa;
+    --text: #0f172a;
+    --muted: #6b7280;
+    --card-bg: #ffffff;
+    --brand-blue: #2563EB;
+    --brand-orange: #FB923C;
+  }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top left, #e0f2f1, #f5f7fa);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      padding: 24px;
-    }
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: radial-gradient(circle at top left, #e0f2f1, #f5f7fa);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+  }
 
-    .page {
-      max-width: 1200px;
-      width: 100%;
-      background: var(--card-bg);
-      padding: 48px;
-      border-radius: 18px;
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.15);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      gap: 48px;
-    }
+  .page {
+    max-width: 1200px;
+    width: 100%;
+    background: var(--card-bg);
+    padding: 48px;
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
 
-    .header {
-      display: flex;
-      justify-content: flex-start;
-      margin-bottom: 8px;
-    }
+  .header {
+    display: flex;
+    justify-content: flex-start;
+  }
 
-    .logo-svg {
-      width: 480px;
-      height: 100px;
-    }
+  .logo-svg {
+    width: 480px;
+    height: 100px;
+  }
 
-    .section-label {
-      background: #e0f2e9;
-      display: inline-block;
-      padding: 6px 18px;
-      border-radius: 20px;
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 24px;
-      color: #064e3b;
-    }
+  .section-label {
+    background: #e0f2e9;
+    display: inline-block;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #064e3b;
+  }
 
-    h1 {
-      font-size: 45px;
-      line-height: 1.15;
-      margin-bottom: 18px;
-    }
+  h1 {
+    font-size: 45px;
+    line-height: 1.15;
+    margin-bottom: 18px;
+  }
 
-    p.subtitle {
-      font-size: 18px;
-      color: var(--muted);
-      margin-bottom: 28px;
-      max-width: 700px;
-    }
+  p.subtitle {
+    font-size: 18px;
+    color: var(--muted);
+    margin-bottom: 28px;
+    max-width: 700px;
+  }
 
-    .cta-btn {
-      background: #059669;
-      color: white;
-      font-size: 18px;
-      font-weight: 600;
-      border: none;
-      border-radius: 30px;
-      padding: 14px 28px;
-      cursor: pointer;
-      margin-bottom: 24px;
-    }
+  /* --- ORANGE CTA BUTTONS --- */
+  .cta-btn {
+    background: var(--brand-orange);
+    color: var(--text);
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 30px;
+    padding: 16px 32px;
+    cursor: pointer;
+    margin-bottom: 24px;
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
 
-    .features {
-      margin-bottom: 36px;
-      font-size: 17px;
-    }
+  .cta-btn:hover {
+    background: #ff8a24;
+    transform: translateY(-2px);
+  }
 
-    .features li {
-      margin: 6px 0;
-      color: #065f46;
-    }
+  .features {
+    margin-bottom: 36px;
+    font-size: 17px;
+  }
 
-    .signup-box {
-      padding: 35px;
-      border-radius: 12px;
-      background: #fefefe;
-      border: 1px solid #ecf0f1;
-    }
+  .features li {
+    margin: 6px 0;
+    color: #065f46;
+  }
 
-    .signup-box h2 {
-      font-size: 32px;
-      margin-bottom: 12px;
-    }
+  .signup-box {
+    padding: 35px;
+    border-radius: 12px;
+    background: #fefefe;
+    border: 1px solid #ecf0f1;
+  }
 
-    .signup-box-subtext {
-      color: var(--muted);
-      margin-bottom: 24px;
-      font-size: 16px;
-    }
+  .signup-box h2 {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
 
-    input[type="email"] {
-      width: 100%;
-      padding: 14px;
-      font-size: 18px;
-      margin-bottom: 18px;
-      border: 2px solid #d1d5db;
-      border-radius: 10px;
-    }
+  .signup-box-subtext {
+    color: var(--muted);
+    margin-bottom: 24px;
+    font-size: 16px;
+  }
 
-    .signup-btn {
-      background: black;
-      color: white;
-      width: 100%;
-      font-size: 18px;
-      font-weight: 600;
-      padding: 14px;
-      border-radius: 12px;
-      cursor: pointer;
-    }
+  input[type="email"] {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    margin-bottom: 18px;
+    border: 2px solid #d1d5db;
+    border-radius: 10px;
+  }
 
-    footer {
-      text-align: center;
-      margin-top: 48px;
-      color: #6b7280;
-      font-size: 14px;
-    }
-  </style>
+  /* --- SECOND ORANGE CTA BUTTON --- */
+  .signup-btn {
+    background: var(--brand-orange);
+    color: var(--text);
+    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+
+  .signup-btn:hover {
+    background: #ff8a24;
+    transform: translateY(-2px);
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 48px;
+    color: #6b7280;
+    font-size: 14px;
+  }
+</style>
 </head>
+
 <body>
 
 <div class="page">
 
-  <!-- LOGO (upper-left, larger text, fixed spacing & clipping) -->
+  <!-- LOGO -->
   <div class="header">
     <svg class="logo-svg"
-         viewBox="0 0 500 120"
-         xmlns="http://www.w3.org/2000/svg"
-         aria-labelledby="dfLogoTitle dfLogoDesc"
-         role="img">
+        viewBox="0 0 500 120"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-labelledby="dfLogoTitle dfLogoDesc"
+        role="img">
       <title id="dfLogoTitle">DealFindings Logo</title>
-      <desc id="dfLogoDesc">Blue price tag icon with orange checkmark and the word DealFindings</desc>
+      <desc id="dfLogoDesc">Blue price tag icon with orange checkmark</desc>
 
-      <!-- Tag icon aligned to text baseline -->
       <g transform="translate(0,38)">
         <path d="M12 4h52c3 0 5 2 5 5v26c0 3-2 5-5 5H32L10 24V9c0-3 2-5 5-5z" fill="#2563EB"/>
         <circle cx="22" cy="14" r="4" fill="#EFF6FF"/>
-        <!-- Checkmark moved 20px right -->
         <path d="M43 24l7 7 11-13"
-              fill="none"
-              stroke="#FB923C"
-              stroke-width="3"
-              stroke-linecap="round"
-              stroke-linejoin="round"/>
+          fill="none"
+          stroke="#FB923C"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
       </g>
 
-      <!-- Text: Larger and one word -->
       <text x="75" y="82"
-            font-size="65"
-            font-weight="700"
-            font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
-            fill="#FB923C">
+          font-size="65"
+          font-weight="700"
+          font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+          fill="#FB923C">
         Deal<tspan fill="#2563EB">Findings</tspan>
       </text>
     </svg>
   </div>
 
-  <!-- Header Label -->
+  <!-- Section Tag -->
   <span class="section-label">DEALFINDINGS WEEKLY</span>
 
   <h1>Only Tech Worth Buying — Only When It’s a Deal.</h1>
@@ -218,8 +230,3 @@
 
 </body>
 </html>
-
-
-
-
-
