@@ -981,8 +981,21 @@
       });
     })();
   </script>
+  <script>
+    // Scroll to deals if URL contains #deals
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.location.hash === "#deals") {
+        const section = document.getElementById("deals");
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+    });
+  </script>
+
 </body>
 </html>
+
 
 
 
