@@ -227,7 +227,7 @@
       color: #6b7280;
     }
 
-    .deal-btn {
+        .deal-btn {
       margin-top: 8px;
       display: inline-flex;
       align-items: center;
@@ -235,7 +235,7 @@
       padding: 9px 12px;
       border-radius: 999px;
       border: none;
-      background: #111827;
+      background: var(--brand-orange);        /* match hero CTA */
       color: #ffffff;
       font-size: 13px;
       font-weight: 600;
@@ -243,19 +243,20 @@
       cursor: pointer;
       transition: background-color 0.15s ease, transform 0.15s ease,
         box-shadow 0.15s ease;
-      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.28);
+      box-shadow: 0 8px 18px rgba(248, 113, 22, 0.35);  /* orange shadow */
     }
 
     .deal-btn:hover {
-      background: #020617;
+      background: #ea580c;                     /* same hover as hero */
       transform: translateY(-1px);
-      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.32);
+      box-shadow: 0 10px 20px rgba(248, 113, 22, 0.4);
     }
 
     .deal-btn:active {
       transform: translateY(0);
-      box-shadow: 0 7px 16px rgba(15, 23, 42, 0.28);
+      box-shadow: 0 7px 16px rgba(248, 113, 22, 0.35);
     }
+
 
     /* Newsletter / signup box wrapper around MailerLite form */
 
@@ -1189,3 +1190,4 @@
 
 </body>
 </html>
+
